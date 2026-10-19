@@ -1,0 +1,161 @@
+/**
+ * @name Norm Ender - OmniVybe Edition
+ * @author BartuAbiHD
+ * @version 1.0.0
+ * @description OmniVybe için optimize edilmiş, karanlık ve kırmızı detaylı Norm Ender teması.
+ */
+
+/* 1. Ana Renk ve Şeffaflık Değişkenleri */
+:root,
+.theme-dark,
+.theme-light,
+html,
+body {
+    --accent-color: #ff0000;
+    --text-link: #ff4d4d !important;
+    --brand-experiment: #cc0000 !important;
+    --brand-500: #cc0000 !important;
+    --header-primary: #ffffff !important;
+    --header-secondary: #b9bbbe !important;
+
+    /* Katmanların üst üste binip resmi kapatmaması için çok hafif şeffaflık */
+    --background-primary: transparent !important;
+    --background-secondary: rgba(0, 0, 0, 0.35) !important;
+    --background-secondary-alt: rgba(0, 0, 0, 0.5) !important;
+    --background-tertiary: rgba(0, 0, 0, 0.45) !important;
+    --background-floating: rgba(15, 0, 0, 0.95) !important;
+    --channeltextarea-background: rgba(15, 15, 15, 0.75) !important;
+    --bg-overlay-chat: transparent !important;
+    --bg-base-primary: transparent !important;
+    --bg-base-secondary: transparent !important;
+    --bg-base-tertiary: transparent !important;
+}
+
+/* 2. Resmi Sabit Bir Arka Plan Katmanı Olarak Zorla (Ezilmeyi Önler) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Resmi doğrudan karartma filtresiyle birlikte basıyoruz */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), 
+                url('https://i.ibb.co/mC6cWSNP/norm-ender-yeniboyutt.png') center / cover no-repeat fixed !important;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 3. Ana Kapsayıcıların Kendi Siyah Arka Planlarını Sıfırla */
+html,
+body,
+#app-mount,
+#root,
+#app,
+main,
+section,
+[class*="appMount"],
+[class*="app_"],
+[class*="bg_"],
+[class*="layer_"],
+[class*="base_"],
+[class*="content_"],
+[class*="container_"],
+[class*="sidebar_"],
+[class*="wrapper_"],
+[class*="panels_"],
+[class*="privateChannels_"],
+[class*="scroller_"],
+[class*="peopleColumn_"],
+[class*="nowPlayingColumn_"],
+[class*="tabBody_"],
+nav,
+aside {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 4. Sol Menü ve Sağ Aktiflik Kısmına Hafif Cam/Karartma Efekti */
+[class*="sidebar_"],
+nav,
+aside,
+[class*="nowPlayingColumn_"] {
+    background-color: rgba(0, 0, 0, 0.35) !important;
+}
+
+/* 5. Sohbet ve Arkadaşlar Ana Ekranına Çok Hafif Karartma */
+[class*="chat_"],
+[class*="chatContent_"],
+main,
+[class*="peopleColumn_"] {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 6. Üst Bar (Header) */
+header,
+[class*="title_"],
+[class*="container_"][class*="themed_"] {
+    background-color: rgba(0, 0, 0, 0.45) !important;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.2) !important;
+}
+
+/* 7. Üst Bar, Kanal İsimleri ve Başlık Yazıları */
+[class*="name_"],
+[class*="title_"],
+.channel-name,
+.header-title {
+    color: var(--accent-color) !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 8. Kaydırma Çubuğu (Scrollbar) */
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color) !important;
+    border-radius: 10px !important;
+}
+
+/* 9. Sol Alt Kullanıcı Paneli ve Açılır Kartlar (Popout) */
+[class*="userPanelOuter_"],
+[class*="userPopoutOuter_"],
+[class*="userPopout_"],
+[class*="panels_"],
+.user-profile-modal,
+.user-popout {
+    border: 1px solid var(--accent-color) !important;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.3) !important;
+    background-color: rgba(10, 10, 10, 0.85) !important;
+    border-radius: 8px;
+}
+
+/* 10. Seçili veya Üzerine Gelinen Kanal Vurgusu */
+[class*="modeSelected_"] [class*="link_"],
+[class*="selected_"] [class*="link_"],
+[class*="interactiveSelected_"],
+.channel-item.selected,
+.channel-item:hover {
+    background-color: rgba(255, 0, 0, 0.25) !important;
+    border-left: 3px solid var(--accent-color) !important;
+}
+
+/* 11. Buton ve İkon Vurguları */
+button[class*="lookFilled_"][class*="colorBrand_"],
+[class*="addFriend_"] {
+    background-color: var(--brand-experiment) !important;
+    color: #fff !important;
+}
+
+button[class*="lookFilled_"][class*="colorBrand_"]:hover {
+    background-color: var(--accent-color) !important;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5) !important;
+}
