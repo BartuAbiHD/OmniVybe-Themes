@@ -3,117 +3,174 @@
  * @author BartuAbiHD
  * @version 1.0.0
  * @description OmniVybe için optimize edilmiş, karanlık ve kırmızı detaylı Norm Ender teması.
+ * @source https://raw.githubusercontent.com/BartuAbiHD/OmniVybe-Themes/refs/heads/main/NormEnder/NormEnder.css
+ * @updateUrl https://raw.githubusercontent.com/BartuAbiHD/OmniVybe-Themes/refs/heads/main/NormEnder/NormEnder.css
  */
 
-/* 1. Ana Renk ve Şeffaflık Değişkenleri */
+/* 1. OmniVybe Ana Renk Değişkenleri */
 :root,
-.theme-dark,
-.theme-light,
-html,
-body {
-    --accent-color: #ff0000;
-    --text-link: #ff4d4d !important;
-    --brand-experiment: #cc0000 !important;
-    --brand-500: #cc0000 !important;
-    --header-primary: #ffffff !important;
-    --header-secondary: #b9bbbe !important;
-
-    /* Katmanların üst üste binip resmi kapatmaması için çok hafif şeffaflık */
-    --background-primary: transparent !important;
-    --background-secondary: rgba(0, 0, 0, 0.35) !important;
-    --background-secondary-alt: rgba(0, 0, 0, 0.5) !important;
-    --background-tertiary: rgba(0, 0, 0, 0.45) !important;
-    --background-floating: rgba(15, 0, 0, 0.95) !important;
-    --channeltextarea-background: rgba(15, 15, 15, 0.75) !important;
-    --bg-overlay-chat: transparent !important;
-    --bg-base-primary: transparent !important;
-    --bg-base-secondary: transparent !important;
-    --bg-base-tertiary: transparent !important;
-}
-
-/* 2. Resmi Sabit Bir Arka Plan Katmanı Olarak Zorla (Ezilmeyi Önler) */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    /* Resmi doğrudan karartma filtresiyle birlikte basıyoruz */
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), 
-                url('https://raw.githubusercontent.com/BartuAbiHD/OmniVybe-Themes/refs/heads/main/NormEnder/images/NormEnder.png') center / cover no-repeat fixed !important;
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* 3. Ana Kapsayıcıların Kendi Siyah Arka Planlarını Sıfırla */
 html,
 body,
-#app-mount,
+.theme-dark,
+.theme-light {
+    --accent-color: #ff0000 !important;
+    --brand-primary: #cc0000 !important;
+    --brand-secondary: #990000 !important;
+    --instance-brand-primary: #cc0000 !important;
+    --instance-brand-secondary: #990000 !important;
+    --instance-brand-primary-light: #ff4d4d !important;
+    --instance-brand-primary-foreground: #ff4d4d !important;
+    --instance-brand-tint: rgba(255, 0, 0, 0.2) !important;
+    --instance-brand-tint-hover: rgba(255, 0, 0, 0.35) !important;
+    --instance-brand-tint-border: #ff0000 !important;
+    --text-link: #ff4d4d !important;
+}
+
+/* 2. Ana Arka Plan Resmi (Doğrudan HTML ve Body üzerine sabitlendi) */
+html,
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
+                url('https://raw.githubusercontent.com/BartuAbiHD/OmniVybe-Themes/refs/heads/main/NormEnder/images/NormEnder.png') center / cover no-repeat fixed !important;
+}
+
+/* 3. Resmi Kapatıp Siyah Duvar Ören Tüm Rspack/Fluxer Katmanlarını Şeffaflaştır */
 #root,
-#app,
-main,
-section,
-[class*="appMount"],
-[class*="app_"],
-[class*="bg_"],
-[class*="layer_"],
-[class*="base_"],
-[class*="content_"],
-[class*="container_"],
-[class*="sidebar_"],
-[class*="wrapper_"],
-[class*="panels_"],
-[class*="privateChannels_"],
-[class*="scroller_"],
-[class*="peopleColumn_"],
-[class*="nowPlayingColumn_"],
-[class*="tabBody_"],
-nav,
-aside {
+#main-content,
+[class*="App.module__"],
+[class*="AppLayout.module__"],
+[class*="GuildsLayout.module__"],
+[class*="OutlineFrame.module__"],
+[class*="DirectMessageLayout.module__"],
+[class*="DirectMessageList.module__"],
+[class*="DMFriendsView.module__"],
+[class*="EmptyStateView.module__"],
+[class*="ActiveNowSidebar.module__"],
+[class*="ChannelHeader.module__"],
+[class*="Scroller.module__"],
+[class*="ChannelLayout.module__"],
+[class*="ChatView.module__"],
+[class*="MessageList.module__"],
+[class*="ChannelSidebar.module__"],
+[class*="GuildSidebar.module__"],
+[class*="MemberList.module__"],
+[data-flx*="app-container"],
+[data-flx*="app-layout"],
+[data-flx*="guilds-layout"],
+[data-flx*="outline-frame"],
+[data-flx*="main-content"] {
     background: transparent !important;
     background-color: transparent !important;
 }
 
-/* 4. Sol Menü ve Sağ Aktiflik Kısmına Hafif Cam/Karartma Efekti */
-[class*="sidebar_"],
-nav,
-aside,
-[class*="nowPlayingColumn_"] {
-    background-color: rgba(0, 0, 0, 0.35) !important;
+/* 4. Okunabilirlik İçin Bölgelere Özel Yarı Saydam Katmanlar */
+
+/* En Üst Windows Başlık Çubuğu (Titlebar) */
+.fluxer-native-titlebar {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.25) !important;
 }
 
-/* 5. Sohbet ve Arkadaşlar Ana Ekranına Çok Hafif Karartma */
-[class*="chat_"],
-[class*="chatContent_"],
-main,
-[class*="peopleColumn_"] {
+/* En Sol Sunucu Sütunu */
+[class*="GuildsLayout.module__guildsLayoutContainer___"],
+[data-flx="app.guilds-layout.guilds-layout"] {
+    background-color: rgba(0, 0, 0, 0.55) !important;
+}
+
+/* DM Listesi ve Sunucu Kanal Listesi (Sol Yan Menü) */
+[class*="DirectMessageLayout.module__dmListColumn___"],
+[class*="GuildSidebar.module__"],
+[class*="ChannelSidebar.module__"],
+[data-flx*="dm-list-column"] {
+    background-color: rgba(0, 0, 0, 0.45) !important;
+    border-right: 1px solid rgba(255, 0, 0, 0.15) !important;
+}
+
+/* Ana İçerik, Sohbet ve Arkadaşlar Ekranı (Orta Alan - Resmin En Net Göründüğü Yer) */
+[class*="DirectMessageLayout.module__contentColumn___"],
+[class*="DMFriendsView.module__mainColumn___"],
+[data-flx*="content-column"] {
     background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-/* 6. Üst Bar (Header) */
-header,
-[class*="title_"],
-[class*="container_"][class*="themed_"] {
-    background-color: rgba(0, 0, 0, 0.45) !important;
-    border-bottom: 1px solid rgba(255, 0, 0, 0.2) !important;
+/* Sağdaki "Şu An Aktif" ve Üye Listesi Sütunu */
+[class*="ActiveNowSidebar.module__sidebar___"],
+[class*="MemberList.module__"],
+[data-flx="channel.active-now.active-now-sidebar.sidebar"] {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-left: 1px solid rgba(255, 0, 0, 0.15) !important;
 }
 
-/* 7. Üst Bar, Kanal İsimleri ve Başlık Yazıları */
-[class*="name_"],
-[class*="title_"],
-.channel-name,
-.header-title {
+/* Üst Kanal ve Arkadaşlar Başlık Barı */
+header[class*="ChannelHeader.module__headerWrapper___"],
+[data-flx="channel.channel-header.header-wrapper"] {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(255, 0, 0, 0.25) !important;
+}
+
+/* 5. Sol Alt Kullanıcı Paneli (BAHD Alanı) */
+[class*="UserArea.module__userAreaContainer___"],
+[data-flx="app.user-area.user-area-inner.user-area-container"] {
+    background-color: rgba(12, 0, 0, 0.85) !important;
+    border: 1px solid var(--accent-color) !important;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3) !important;
+    border-radius: 10px !important;
+}
+
+/* 6. Arama Kutusu, Mesaj Yazma Alanı ve Yüzeyler */
+[class*="FormSurface.module__surface___"],
+[class*="FormInput.module__inputWrapper___"],
+[class*="MessageComposer.module__"],
+input[class*="FormInput.module__input___"] {
+    background-color: rgba(15, 15, 15, 0.75) !important;
+    border: 1px solid rgba(255, 0, 0, 0.3) !important;
+    color: #ffffff !important;
+}
+
+/* 7. Seçili DM, Seçili Kanal ve Sekme Vurguları */
+[class*="DirectMessageList.module__clickableItemSelected___"],
+[class*="DirectMessageList.module__dmItem___"][aria-current="page"],
+[class*="DMFriendsView.module__tabButton___"][aria-selected="true"],
+[class*="DirectMessageList.module__clickableItem___"]:hover,
+[class*="DirectMessageList.module__dmItem___"]:hover {
+    background-color: rgba(255, 0, 0, 0.22) !important;
+    border-left: 3px solid var(--accent-color) !important;
+}
+
+/* Sol Sunucu Seçim Çubuğu */
+[class*="GuildsLayout.module__guildIndicatorBar___"] {
+    background-color: var(--accent-color) !important;
+    box-shadow: 0 0 8px var(--accent-color) !important;
+}
+
+/* 8. Başlıklar, İsimler ve Norm Ender Rap Estetiği */
+.fluxer-native-titlebar__wordmark,
+[class*="DMFriendsView.module__titleText___"],
+[class*="ActiveNowSidebar.module__headerTitle___"],
+[class*="UserArea.module__userName___"],
+[class*="DirectMessageList.module__dmSectionHeaderLabel___"],
+[class*="EmptyStateView.module__title___"],
+[class*="ChannelHeader.module__"] h1,
+[class*="ChannelHeader.module__"] h2 {
     color: var(--accent-color) !important;
-    font-weight: bold !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85) !important;
 }
 
-/* 8. Kaydırma Çubuğu (Scrollbar) */
+/* 9. "Arkadaş Ekle" ve Ana Butonlar */
+[class*="DMFriendsView.module__primary___"],
+button[class*="Button.module__primary___"] {
+    background-color: var(--brand-primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4) !important;
+}
+
+/* 10. Kaydırma Çubuğu (Scrollbar) */
 ::-webkit-scrollbar {
-    width: 8px !important;
-    height: 8px !important;
+    width: 6px !important;
+    height: 6px !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -125,37 +182,10 @@ header,
     border-radius: 10px !important;
 }
 
-/* 9. Sol Alt Kullanıcı Paneli ve Açılır Kartlar (Popout) */
-[class*="userPanelOuter_"],
-[class*="userPopoutOuter_"],
-[class*="userPopout_"],
-[class*="panels_"],
-.user-profile-modal,
-.user-popout {
+/* 11. Açılır Pencereler ve Modallar (Popouts / Modals) */
+[class*="PopoverPopout.module__"] > div,
+[class*="Modals.module__"] [role="dialog"] {
+    background-color: rgba(12, 12, 12, 0.95) !important;
     border: 1px solid var(--accent-color) !important;
-    box-shadow: 0 0 12px rgba(255, 0, 0, 0.3) !important;
-    background-color: rgba(10, 10, 10, 0.85) !important;
-    border-radius: 8px;
-}
-
-/* 10. Seçili veya Üzerine Gelinen Kanal Vurgusu */
-[class*="modeSelected_"] [class*="link_"],
-[class*="selected_"] [class*="link_"],
-[class*="interactiveSelected_"],
-.channel-item.selected,
-.channel-item:hover {
-    background-color: rgba(255, 0, 0, 0.25) !important;
-    border-left: 3px solid var(--accent-color) !important;
-}
-
-/* 11. Buton ve İkon Vurguları */
-button[class*="lookFilled_"][class*="colorBrand_"],
-[class*="addFriend_"] {
-    background-color: var(--brand-experiment) !important;
-    color: #fff !important;
-}
-
-button[class*="lookFilled_"][class*="colorBrand_"]:hover {
-    background-color: var(--accent-color) !important;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5) !important;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.35) !important;
 }
