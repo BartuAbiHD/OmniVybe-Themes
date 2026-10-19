@@ -3,11 +3,11 @@
  * @author bahd
  * @version 1.0.0
  * @description Ben 10 ve Omnitrix'in neon yeşil renklerinden esinlenen OmniVybe teması.
- * @source 
+ * @source https://raw.githubusercontent.com/BartuAbiHD/OmniVybe-Themes/refs/heads/main/Ben%2010%20Omnitrix/Ben10-Omnitrix.css
 */
 
 :root {
-  --tj-bg: url('https://i.ibb.co/JFsfQB8F/image.png');
+  --tj-bg: url('https://raw.githubusercontent.com/BartuAbiHD/OmniVybe-Themes/refs/heads/main/Ben%2010%20Omnitrix/images/Ben10-Omnitrix.png');
 
   /* Ben 10 görselinden alınan renkler */
   --tj-navy: 5, 13, 8;              /* siyaha yakın koyu yeşil */
