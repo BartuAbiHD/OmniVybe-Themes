@@ -41,7 +41,7 @@ body::before {
     height: 100vh;
     /* Resmi doğrudan karartma filtresiyle birlikte basıyoruz */
     background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), 
-                url('https://github.com/BartuAbiHD/OmniVybe-Themes/blob/main/NormEnder/images/NormEnder.png?raw=true') center / cover no-repeat fixed !important;
+                url('https://raw.githubusercontent.com/BartuAbiHD/OmniVybe-Themes/refs/heads/main/NormEnder/images/NormEnder.png') center / cover no-repeat fixed !important;
     z-index: -1;
     pointer-events: none;
 }
