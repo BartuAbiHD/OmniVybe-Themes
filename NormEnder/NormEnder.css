@@ -41,7 +41,7 @@ body::before {
     height: 100vh;
     /* Resmi doğrudan karartma filtresiyle birlikte basıyoruz */
     background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), 
-                url('https://i.ibb.co/mC6cWSNP/norm-ender-yeniboyutt.png') center / cover no-repeat fixed !important;
+                url('https://github.com/BartuAbiHD/OmniVybe-Themes/blob/main/NormEnder/images/NormEnder.png?raw=true') center / cover no-repeat fixed !important;
     z-index: -1;
     pointer-events: none;
 }
