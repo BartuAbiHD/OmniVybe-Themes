@@ -1,0 +1,202 @@
+/**
+ * @name Ben 10 - Omnitrix
+ * @author bahd
+ * @version 1.0.0
+ * @description Ben 10 ve Omnitrix'in neon yeşil renklerinden esinlenen OmniVybe teması.
+ * @source 
+*/
+
+:root {
+  --tj-bg: url('https://i.ibb.co/JFsfQB8F/image.png');
+
+  /* Ben 10 görselinden alınan renkler */
+  --tj-navy: 5, 13, 8;              /* siyaha yakın koyu yeşil */
+  --tj-navy-light: 15, 35, 12;      /* koyu orman yeşili */
+  --tj-cyan: #a6ff00;               /* Omnitrix neon lime */
+  --tj-cyan-dim: #72d900;           /* koyu neon yeşil */
+  --tj-blue: #38b800;               /* enerji yeşili */
+  --tj-ice: #f0ffe5;                /* açık yeşilimsi beyaz */
+  --tj-green: #70e000;              /* canlı yeşil */
+  --tj-maroon: #426018;             /* koyu zeytin */
+  --tj-red: #ff4d4d;                /* uyarı kırmızısı */
+
+  /* Yarı saydam paneller */
+  --tj-panel-chat: rgba(var(--tj-navy), 0.25);
+  --tj-panel-side: rgba(var(--tj-navy), 0.72);
+  --tj-panel-deep: rgba(var(--tj-navy), 0.84);
+  --tj-panel-soft: rgba(var(--tj-navy-light), 0.48);
+  --tj-hover: rgba(166, 255, 0, 0.10);
+  --tj-selected: rgba(166, 255, 0, 0.19);
+  --tj-line: rgba(166, 255, 0, 0.22);
+
+  /* ====== OmniVybe değişkenleri ====== */
+
+  /* Arka planlar */
+  --background-primary: var(--tj-panel-chat);
+  --background-secondary: var(--tj-panel-side);
+  --background-secondary-alt: var(--tj-panel-side);
+  --background-secondary-lighter: var(--tj-panel-soft);
+  --background-tertiary: var(--tj-panel-deep);
+  --background-textarea: var(--tj-panel-deep);
+  --background-header-primary: var(--tj-panel-side);
+  --background-header-primary-hover: var(--tj-hover);
+  --background-header-secondary: var(--tj-panel-side);
+  --channel-header-background: var(--tj-panel-side);
+  --guild-list-foreground: var(--tj-ice);
+
+  /* Hover / seçili / odak */
+  --background-modifier-hover: var(--tj-hover);
+  --background-modifier-selected: var(--tj-selected);
+  --background-modifier-accent: var(--tj-line);
+  --background-modifier-accent-focus: var(--tj-cyan);
+
+  /* Marka renkleri */
+  --brand-primary: var(--tj-cyan);
+  --brand-secondary: var(--tj-cyan-dim);
+  --brand-primary-light: #caff70;
+  --brand-primary-fill: #101b06;
+  --accent-primary: var(--tj-cyan);
+  --text-on-brand-primary: #101606;
+
+  /* Durum renkleri */
+  --status-online: var(--tj-green);
+  --status-idle: #e7d94b;
+  --status-dnd: var(--tj-red);
+  --status-offline: #65705d;
+  --status-danger: var(--tj-red);
+
+  /* Metinler */
+  --text-primary: var(--tj-ice);
+  --text-secondary: #b7c9a7;
+  --text-tertiary: #849579;
+  --text-primary-muted: #6e8062;
+  --text-chat: var(--tj-ice);
+  --text-chat-muted: #b7c9a7;
+  --text-link: var(--tj-cyan);
+  --text-tertiary-muted: #6e8062;
+  --text-tertiary-secondary: #849579;
+
+  /* Kenarlıklar */
+  --border-color: var(--tj-line);
+  --border-color-hover: rgba(166, 255, 0, 0.45);
+  --border-color-focus: var(--tj-cyan);
+
+  /* Vurgu renkleri */
+  --accent-success: var(--tj-green);
+  --accent-warning: #e7d94b;
+  --accent-danger: var(--tj-red);
+  --accent-info: var(--tj-cyan);
+  --accent-purple: #b28cff;
+
+  /* Uyarı kutuları */
+  --alert-note-color: var(--tj-cyan);
+  --alert-tip-color: var(--tj-green);
+  --alert-important-color: #b28cff;
+  --alert-warning-color: #e7d94b;
+  --alert-caution-color: var(--tj-red);
+
+  /* Mention'lar ve etkileşimli öğeler */
+  --markup-mention-text: var(--tj-cyan);
+  --markup-mention-fill: rgba(166, 255, 0, 0.14);
+  --markup-interactive-hover-text: #caff70;
+  --markup-interactive-hover-fill: rgba(166, 255, 0, 0.22);
+
+  /* Butonlar */
+  --button-primary-fill: var(--tj-cyan);
+  --button-primary-active-fill: var(--tj-cyan-dim);
+  --button-primary-text: #101606;
+  --button-secondary-fill: rgba(var(--tj-navy-light), 0.82);
+  --button-secondary-active-fill: rgba(56, 184, 0, 0.35);
+  --button-secondary-text: var(--tj-ice);
+  --button-danger-fill: #7d2525;
+  --button-danger-active-fill: var(--tj-red);
+  --button-danger-text: #ffffff;
+  --button-danger-outline-border: var(--tj-red);
+  --button-danger-outline-text: var(--tj-red);
+  --button-danger-outline-active-fill: #7d2525;
+  --button-danger-outline-active-border: var(--tj-red);
+  --button-ghost-text: var(--tj-ice);
+  --button-inverted-fill: var(--tj-ice);
+  --button-inverted-text: #101606;
+  --button-outline-border: rgba(166, 255, 0, 0.40);
+  --button-outline-text: var(--tj-ice);
+  --button-outline-active-fill: rgba(166, 255, 0, 0.16);
+  --button-outline-active-border: var(--tj-cyan);
+
+  /* Genel yüzeyler */
+  --bg-primary: var(--tj-panel-chat);
+  --bg-secondary: var(--tj-panel-side);
+  --bg-tertiary: var(--tj-panel-soft);
+  --bg-hover: var(--tj-hover);
+  --bg-active: var(--tj-selected);
+
+  /* Kod ve tablolar */
+  --bg-code: rgba(var(--tj-navy), 0.68);
+  --bg-code-block: rgba(var(--tj-navy), 0.76);
+  --bg-blockquote: rgba(var(--tj-navy-light), 0.55);
+  --bg-table-header: rgba(var(--tj-navy-light), 0.82);
+  --bg-table-row-odd: rgba(var(--tj-navy), 0.38);
+  --bg-table-row-even: rgba(var(--tj-navy-light), 0.38);
+}
+
+/* Arka plan görseli */
+html,
+body {
+  background: var(--tj-bg) center / cover no-repeat fixed !important;
+}
+
+/* Saydam zeminde yazılar net okunsun */
+body {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+}
+
+/* Kaydırma çubuğu */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(166, 255, 0, 0.40);
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(166, 255, 0, 0.70);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* Metin seçimi */
+::selection {
+  background: rgba(166, 255, 0, 0.35);
+  color: #ffffff;
+}
+
+/* Sohbet alanının konum ve boyutları */
+:root {
+  --tj-left: 394px;
+  --tj-top: 89px;
+  --tj-bottom: 0px;
+
+  /* Sohbet alanı ve yan paneller */
+  --background-primary: rgba(5, 13, 8, 0.92);
+  --bg-primary: rgba(5, 13, 8, 0.92);
+
+  /* Soldaki sunucu ikonları */
+  --guild-list-foreground: rgba(18, 39, 12, 0.95);
+}
+
+/* Görsel yalnızca sohbet alanında */
+body::after {
+  content: "";
+  position: fixed;
+  top: var(--tj-top);
+  left: var(--tj-left);
+  right: 0;
+  bottom: var(--tj-bottom);
+  background: var(--tj-bg) center / cover no-repeat;
+  mix-blend-mode: screen;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 5;
+}
